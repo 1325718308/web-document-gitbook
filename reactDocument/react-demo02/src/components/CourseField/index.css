@@ -1,0 +1,8 @@
+.filed-item {
+    text-decoration: none;
+    margin-right: 10px;
+}
+.current-field {
+    margin-right: 10px;
+    background-color: gray;
+}
