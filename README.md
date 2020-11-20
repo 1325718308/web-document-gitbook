@@ -28,7 +28,8 @@
   * [React Hooks详解](./vueDocument/document5.md)
   * [Webpack构建工具](./vueDocument/document6.md)
   * [Vue模版编译原理](./vueDocument/document7.md)
-  * [Vue生命周期源码解析](./vueDocument/document7.md)
+  * [Vue生命周期源码解析](./vueDocument/document8.md)
+  * [Vue响应式原理](./vueDocument/document9.md)
 * 算法
   * [算法之排序](./algorithmDocument/document4.md)
   * [算法之二叉树](./algorithmDocument/document1.md)
