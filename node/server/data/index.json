@@ -1,0 +1,37 @@
+{
+    "code":"1",
+    "data":{
+        "appendix":{
+            "subtype":"bgc-修改基础信息",
+            "type":"2013"
+        },
+        "pageInfo":{
+            "icon":"",
+            "link":"",
+            "text":""
+        },
+        "addition":{
+            "picture_info":{
+                "owner_card_photo":{
+                    "condition":1,
+                    "old_value":"",
+                    "required":"1",
+                    "tips":"您提供的资质所属行业为特殊行业，需要提供法人身份证照片。"
+                },
+                "hospital_certificate_photo":{
+                    "condition":0,
+                    "old_value":"",
+                    "required":"1",
+                    "tips":"您提供的资质所属行业为特殊行业，需要提供医疗机构执业许可证。"
+                },
+                "owner_photo":{
+                    "condition":1,
+                    "old_value":"",
+                    "required":"1",
+                    "tips":"您提供的资质所属行业为特殊行业，需要提供法人在店铺前的手持身份证合照。"
+                }
+            }
+        }
+    },
+    "message":"查询成功"
+}

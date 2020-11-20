@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       <span>1</span>
+       <span>2</span>
+       <span>3</span>
+       <span>4</span>
+       <span>1</span>
+       <span>2</span>
+       <span>3</span>
+       <span>4</span>
+   </div>
+</body>
+<script>
+    console.log(document.getElementById('content').style.height)
+</script>
+<style>  
+    div {
+        display: flex;
+        width: 800px;
+        height: 600px;
+        background-color: pink;
+        justify-content: center;
+        align-content: center;
+        /* flex-wrap: wrap; */
+        flex-flow: column wrap;
+    }
+    div span {
+        width: 100px;
+        height: 100px;
+        background-color: purple;
+        margin: 10px;
+    }
+</style>
+</html>

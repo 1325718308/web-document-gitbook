@@ -1,4 +1,6 @@
 # 前端技术汇总
+* [目录](README.md)
+
 * JavaScript
   * [函数式编程](./jsDocument/document12.md)
   * [高阶函数](./jsDocument/document0.md)
@@ -28,7 +30,7 @@
   * [React Hooks详解](./vueDocument/document5.md)
   * [Webpack构建工具](./vueDocument/document6.md)
   * [Vue模版编译原理](./vueDocument/document7.md)
-  * [Vue生命周期源码解析](./vueDocument/document7.md)
+  * [Vue生命周期源码解析](./vueDocument/document8.md)
 * 算法
   * [算法之排序](./algorithmDocument/document4.md)
   * [算法之二叉树](./algorithmDocument/document1.md)
@@ -37,6 +39,6 @@
 * 网络
 * 安全
 * 性能
+
 * 你要知道的软技能
   * [浏览器内核](./otherDocument/document.md)
-
