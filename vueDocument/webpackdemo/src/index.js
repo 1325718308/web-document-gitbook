@@ -1,5 +1,4 @@
 import Vue from 'vue';
-// options API 
 let vm = new Vue({
     el: '#app',
     data() {
@@ -26,5 +25,9 @@ let vm = new Vue({
         }
     }
 })
-console.log(vm.info.a.b)
-// vm.title = '学生列表111'
+vm.students.push({
+    id: 3,
+    name: '小白'
+})
+
+

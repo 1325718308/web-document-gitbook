@@ -8,8 +8,9 @@ function defineReactiveData(data, key, value) {
         },
         set(newVal) {
             console.log('响应式数：设置', newVal);
-            if (newVal == value) return
-            data[key] = newVal;
+            if (newVal == value) return;
+            observe(newVal);
+            value = newVal;
         }
     })
 }
