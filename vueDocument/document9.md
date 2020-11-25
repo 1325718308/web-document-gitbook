@@ -1,1 +1,3 @@
-## Vue 2.0响应式原理 Object.defineProperty()
+vue 升级最新版命令
+
+npm i vue @vue/cli -g
