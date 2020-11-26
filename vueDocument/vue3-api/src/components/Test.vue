@@ -1,7 +1,8 @@
 <template>
-  <h1>
-      {{attrs.title}}
-  </h1>
+  <div style="color: red">
+      hello: {{attrs.title}}
+      <span class="text" style="color: green">{{age}}</span>
+  </div>
 </template>
 
 <script>

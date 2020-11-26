@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        你好
+        <h1>{{name}}</h1>
+        <span>
+            欢迎来到{{info.title}}
+        </span>
+    </div>
+    <script src="./dist/umd/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data() {
+                return {
+                    name: '张三',
+                    info: {
+                        title: '我的课堂'
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

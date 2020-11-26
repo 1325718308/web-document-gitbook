@@ -1,6 +1,7 @@
-import { valuesIn } from 'lodash';
 import {initState} from './init';
 import {compileToRenderFunction} from './compiler';
+import {lifecycleMixin, mountComponent} from './lifecycle'
+import {renderMixin} from './vDom'
 function Vue(options) {
     this._init(options);
 }
@@ -15,6 +16,8 @@ Vue.prototype._init = function(options) {
         vm.$mount(vm.$options.el);
     }
 }
+lifecycleMixin(Vue);
+renderMixin(Vue);
 Vue.prototype.$mount = function(el) {
     const vm = this;
     const options = vm.$options;
@@ -29,5 +32,6 @@ Vue.prototype.$mount = function(el) {
         const render = compileToRenderFunction(template)
         options.render = render;
     }
+    mountComponent(vm);
 }
 export default Vue;

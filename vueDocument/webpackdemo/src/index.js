@@ -1,6 +1,10 @@
 import Vue from 'vue';
 let vm = new Vue({
     el: '#app',
+    template: `<div id="app" style="color: red">
+    hello: {{title}}
+    <span class="text" style="color: green">{{age}}</span>
+</div>`,
     data() {
         return {
             title: '学生列表',
