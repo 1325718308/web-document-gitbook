@@ -59,9 +59,9 @@ function generate(el) {
             ? 
             `${formatProps(el.attrs)}`
             : undefined
-        })${
+        }${
             children ? `,${children}` : ''
-        }`;
+        })`;
     return code;
 } 
 export {

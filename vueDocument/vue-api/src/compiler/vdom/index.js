@@ -16,7 +16,6 @@ function renderMixin(Vue) {
         const vm = this;
         const render = vm.$options.render;
         const vNode = render.call(vm);
-        console.log(vNode)
         return vNode;
     }
 }

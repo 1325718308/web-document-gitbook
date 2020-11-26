@@ -186,12 +186,12 @@
     var endTag = new RegExp("^<\\/".concat(qnameCapture, "[^>]*>"));
 
     function parseHtmlToAst(html) {
-      var root,
+      var text,
+          root,
           currentParent,
           stack = [];
 
       while (html) {
-        var text = void 0;
         var textEnd = html.indexOf('<');
 
         if (textEnd === 0) {
@@ -218,9 +218,8 @@
         if (text) {
           advance(text.length);
           chars(text);
-        }
+        } // break;
 
-        break;
       }
 
       function parseStartTag() {
@@ -373,7 +372,7 @@
 
     function generate(el) {
       var children = getChildren(el);
-      var code = "_c('".concat(el.tag, "', ").concat(el.attrs.length > 0 ? "".concat(formatProps(el.attrs)) : undefined, ")").concat(children ? ",".concat(children) : '');
+      var code = "_c('".concat(el.tag, "', ").concat(el.attrs.length > 0 ? "".concat(formatProps(el.attrs)) : undefined).concat(children ? ",".concat(children) : '', ")");
       return code;
     }
 
@@ -509,7 +508,6 @@
         var vm = this;
         var render = vm.$options.render;
         var vNode = render.call(vm);
-        console.log(vNode);
         return vNode;
       };
     }

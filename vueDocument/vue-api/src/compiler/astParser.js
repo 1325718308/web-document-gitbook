@@ -7,11 +7,12 @@ const startTagClose = /^\s*(\/?)>/
 const endTag = new RegExp(`^<\\/${qnameCapture}[^>]*>`)
 
 function parseHtmlToAst(html) {
-    let root, 
+    let text,
+        root, 
         currentParent,
         stack = [];
+        
     while(html) {
-        let text;
         let textEnd = html.indexOf('<');
         if (textEnd === 0) {
             const startTagMatch = parseStartTag();
@@ -33,7 +34,7 @@ function parseHtmlToAst(html) {
             advance(text.length);
             chars(text);
         }
-        break;
+        // break;
     }
     
     function parseStartTag() {
@@ -71,6 +72,7 @@ function parseHtmlToAst(html) {
         currentParent = element;
         stack.push(element);
     }
+
     function end(tagName) {
         const element = stack.pop();
         currentParent = stack[stack.length - 1];
@@ -79,6 +81,7 @@ function parseHtmlToAst(html) {
             currentParent.children.push(element);
         }
     }
+
     function chars(text) {
         text = text.trim();
         if (text.length > 0) {
@@ -88,6 +91,7 @@ function parseHtmlToAst(html) {
             })
         }
     }
+
     function createASTElement(tagName, attrs) {
         return {
             tag: tagName,

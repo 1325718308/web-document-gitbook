@@ -33,7 +33,6 @@ function parseHtmlToAst(html) {
             advance(text.length);
             chars(text);
         }
-        break;
     }
     
     function parseStartTag() {
@@ -97,6 +96,7 @@ function parseHtmlToAst(html) {
             parent
         }
     }
+    console.log(root)
     return root;
 }
 export {
