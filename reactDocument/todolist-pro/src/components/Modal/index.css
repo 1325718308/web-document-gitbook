@@ -1,0 +1,27 @@
+.modal {
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.inner {
+    width: 250px;
+    background-color: #fff;
+}
+.m-header {
+    height: 38px;
+    background-color: #337ab7;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+    font-size: 16px;
+}
+.content-wrapper {
+    padding: 15px;
+}

@@ -215,6 +215,59 @@
 // };
 // console.log(lemonadeChange([5,5,5,10,20]))
 
-console.log(12 << 3)
-let num = -5;
-console.log(num.toString(2))
+// console.log(12 << 3)
+// let num = -5;
+// console.log(num.toString(2))
+
+// function threeSum(sums) {
+//     let res = [];
+//     if (!sums || sums.length < 3) return [];
+//     sums.sort((a, b) => a - b);
+//     for (let i = 0; i < sums.length - 2; i++) {
+//         if (i > 0 && sums[i] === sums[i - 1]) continue;
+//         let left = i + 1,
+//             right = sums.length - 1;
+//         while(left < right) {
+//             let sum = sums[i] + sums[left] + sums[right];
+//             if (sum === 0) {
+//                 res.push([sums[i], sums[left], sums[right]]);
+//                 left++;
+//                 while(sums[left - 1] === sums[left]) left++;
+//             } else if(sum < 0){
+//                 left++;
+//             } else {
+//                 right--;
+//             }
+//         }
+//     }
+//     return res;
+// }
+// threeSum([-1,0,1,2,-1,-4]);
+function hasCycle(head) {
+    if (!head || !head.next) return false;
+    let slow = head;
+    let fast = head.next;
+    while (fast && fast.next) {
+        fast = fast.next;
+        slow = slow.next.next;
+        if (fast === slow) return true;
+    }
+    return false;
+}
+function ListNode(val, next) {
+    this.val = val || 0;
+    this.next = next || null
+}
+function swapPairs(head) {
+    let dummy = new ListNode(0);
+    dummy.next = head;
+    let pre = dummy;
+    while(head && head.next) {
+        let next = head.next;
+        head.next = next.next;
+        next.next = head;
+        pre.next = next;
+        pre = head;
+        head = head.next;
+    }
+}

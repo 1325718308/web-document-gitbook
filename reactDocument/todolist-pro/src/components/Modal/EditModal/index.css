@@ -1,0 +1,14 @@
+.topic {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+.confirm-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+.text-area {
+    width: 100%;
+    min-height: 100px;
+    border: 1px solid #ddd;
+    padding: 5px;
+}

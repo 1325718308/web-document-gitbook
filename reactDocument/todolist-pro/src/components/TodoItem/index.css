@@ -1,0 +1,25 @@
+.todo-item {
+    padding: 10px;
+    border-bottom: 1px solid #f8f8f8;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.check-box {
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+}
+.content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-clamp: 1;
+    margin-left: 5px;
+}
+.btn-group {
+    display: flex;
+    flex-shrink: 0;
+}

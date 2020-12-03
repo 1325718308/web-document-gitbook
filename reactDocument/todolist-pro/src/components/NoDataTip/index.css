@@ -1,0 +1,9 @@
+.nodatatip-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin-top: 82px;
+    font-size: 16px;
+    color: #999;
+}
