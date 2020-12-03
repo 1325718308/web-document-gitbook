@@ -1,6 +1,53 @@
-# 面试汇总
+# 前端面试汇总
 ## 字节跳动
+### 前端跨域
+### 什么是跨域/什么情况下会产生跨域？（同源策略/非同源策略）
+* 同源策略
+    - 端口、协议、域名相同
+* 非同源策略：
+    - 端口、协议、域名三者有一个不同
+    - 例如：web服务器地址：http://127.0.0.1:3000/index.html
+           数据接口地址：http://127.0.0.1:4000/list
 
+跨域是指域名、端口号、协议三者只要有一个不同就会产生跨域。
+### 你是如何解决前端跨域的问题？
+1、使用JSONP (回调函数方式，需要服务端支持)
+JSONP主要是通过带有是scr属性的的标签来实现的跨域，比如script、img、link、iframe等等。具体的实现方式是把我们要请求的服务器（接口）地址放在scr属性的值上面，并且在请求地址后面拼接一个参数，这个参数的值是我们在本地定义的一个方法。当服务器拿到这个参后把客户端所要的数据传入这个参数对应的回调方法内，其实相当于执行了这个回调方法。这时候客户端就可以在这个方法内处理逻辑了。例如下面的方法：
+
+```
+    <script src="http://127.0.0.1:4000/list?callback=getData"></script>
+    <script>
+        function getData(res) {
+            console.log(`${res}就是服务给我们返回的数据了`);
+        }
+    </script>
+```
+* 存在的问题：
+    - JSONP只能处理GET请求； 
+    - 不安全 
+2、CORS 跨域资源共享
+CORS实现跨域的关键是服务器，只要服务器实现了CORS接口，就可以实现跨域通信；服务器对于CORS的支持主要是通过给请求头header设置Access-Control-Allow-Origin属性，这个属性的作用是允许哪一个请求源请求。如果Access-Control-Allow-Origin设置了*，其含义就是允许所有的请求源请求。所以其实CORS实现跨域其实还是有弊端的
+
+* 存在的问题：
+    - 只能设置一个源； 
+    - 如果ccess-Control-Allow-Origin设置了* ，会不安全
+
+3、基于http代理实现跨域请求
+主要是通过webpack webpack-dev-serve 在
+4、nginx反向代理=>不需要客户端做处理
+5、基于postMessage实现跨域处理
+6、基于iframe的跨域解决方案
+7、webSocket
+
+
+http的缓存的了解
+缓存的原理
+请求头有哪些
+服务端返回码有哪些，304代表什么意思
+vue是怎么监听数组改变更新视图的 --- 浅薄的说了下
+diff算法的实现 --- 有点亏，上一题回答的时候飙出来的词
+怎么禁止js读取到cookie
+移动端的对接和应用，怎么调用移动端的方法
 ### hooks 和 class Component 的区别
 1、在写法上不同，hooks是用在函数组件上；而class Component是通过ES6 类的写法，通过定义一个类继承自React.Component。
 2、在hooks中无法使用自定义的state对象，如果要使用state只能通过hooks的useState钩子去实现；但是在class Component 中直接可以通过this.state = {}这样的方式定一个state对象。
